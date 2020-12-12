@@ -33,6 +33,8 @@ function appMenu() {
         }
     })
 }
+
+
 function createManager() {
     console.log("Please build your team");
     inquirer.prompt([
@@ -57,12 +59,13 @@ function createManager() {
             message:"Enter office number"
         }
     ]).then(response=> {
-        var temaManager = new Manager(response.name,response.id,response.email,response.officenumber);
+        var temaManager = new Manager(response.name,response.ID,response.email,response.officenumber);
         teamMembers.push(temaManager);
-        console.log(teamMembers)
+       // console.log(teamMembers)
         appMenu()
     })
 }
+
 function createIntern() {
     console.log("Please build your team");
     inquirer.prompt([
@@ -87,18 +90,45 @@ function createIntern() {
             message:"Enter school"
         }
     ]).then(response=> {
-        var intern = new Intern(response.name,response.id,response.email,response.school);
+        var intern = new Intern(response.name,response.ID,response.email,response.school);
         teamMembers.push(intern);
-        console.log(teamMembers)
+       // console.log(teamMembers)
         appMenu()
     })
 }
 
-    function card(employee) {
+function createEngineer() {
+    console.log("Please build your team");
+    inquirer.prompt([
+        {
+            type:"input",
+            name:"name",
+            message:"Enter name"
+        },
+        {
+            type:"input",
+            name:"email",
+            message:"Enter email"
+        },
+        {
+            type:"input",
+            name:"ID",
+            message:"Enter ID"
+        },
+        {
+            type:"input",
+            name:"github",
+            message:"Enter github"
+        }
+    ]).then(response=> {
+        var engineer = new Engineer(response.name,response.ID,response.email,response.github);
+        teamMembers.push(engineer);
+        //console.log(teamMembers)
+        appMenu()
+    })
+}
 
-        const name = employee.getname();
-        const id = employee.getid();
-        const email = employee.getEmail();
-        const role = employee.getrole();
-        const github = employee.getgithub();
-    }
+function exitApp() {
+    console.log(teamMembers);
+}
+ appMenu()
