@@ -13,3 +13,12 @@ function appMenu() {
   function createManager() {
     console.log("Please build your team");
     inquirer.prompt([])
+
+    function card(employee){
+
+const name= employee.getname();
+const id= employee.getid();
+const email= employee.getEmail();
+const role= employee.getrole();
+const github= employee.getgithub();
+    }
