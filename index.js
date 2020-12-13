@@ -9,6 +9,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 // const render = require("./src/page-template.js");
 const teamMembers = [];
 const idArray = [];
+const managerArray= [`ID`, `email`, `officenumber`,`name`];
 function appMenu() {
     inquirer.prompt([
         {
@@ -60,7 +61,7 @@ function createManager() {
         }
     ]).then(response=> {
         var teamManager = new Manager(response.name,response.ID,response.email,response.officenumber);
-        managerArray.push(teamManager);
+       managerArray.push(teamManager);
        // console.log(teamMembers)
         appMenu()
     })
