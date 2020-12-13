@@ -59,8 +59,8 @@ function createManager() {
             message:"Enter office number"
         }
     ]).then(response=> {
-        var temaManager = new Manager(response.name,response.ID,response.email,response.officenumber);
-        managerArray.push(temaManager);
+        var teamManager = new Manager(response.name,response.ID,response.email,response.officenumber);
+        managerArray.push(teamManager);
        // console.log(teamMembers)
         appMenu()
     })
