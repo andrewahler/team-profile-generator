@@ -60,7 +60,7 @@ function createManager() {
         }
     ]).then(response=> {
         var temaManager = new Manager(response.name,response.ID,response.email,response.officenumber);
-        teamMembers.push(temaManager);
+        managerArray.push(temaManager);
        // console.log(teamMembers)
         appMenu()
     })
@@ -130,5 +130,35 @@ function createEngineer() {
 
 function exitApp() {
     console.log(teamMembers);
+    const openinhHTML = `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../assets/styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <title>Team</title>
+    </head>
+    <body>
+        <header>My Team</header>
+        <div class="container">`
+
+    const closingHTML = `   
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    </html>`
+
+    var managerHTML = ""
+    for(let i=0; i < managerArray.length;i++){
+        managerHTML = `   <div class="card">
+        <div class="card-title"><h4>${managerArray[i].name}</h4></div>
+        <div class="card-body">
+            <p>Email:${managerAray[i].email}</p>
+            <p>Id: ${managerArray[i].ID}</p>
+            <p>Name: ${managerArray[i].name}</p>
+            <p>officenumber: ${managerArray[i].officenumber}</p>
+        </div>
+    </div>`
+    }
 }
  appMenu()
