@@ -8,5 +8,5 @@ Construct a profile for your team using these files and node.js.
 ##### Technology
 Html,Javascript, Node, Jest.
 
-####### Created by 
+#### Created by 
 Andrew Ahler
