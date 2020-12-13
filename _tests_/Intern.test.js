@@ -9,10 +9,10 @@ test('creates an engineer object', () => {
     expect(intern.school).toBe('vandy');
 });
 
-test ("intern's school username", () => {
+test ("intern's school", () => {
     const intern = new Intern ('tom ', '2222', 'cpu@cpu.com', 'vandy')
 
-    expect(intern.getGithub()).toEqual(expect.stringContaining('cpu@cpu.com'));
+    expect(intern.getSchool()).toEqual(expect.stringContaining('vandy'));
 });
 
 test("intern's role", () => {

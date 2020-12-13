@@ -9,10 +9,10 @@ test('creates an manager object', () => {
     expect(manager.officeNumber).toBe('2356');
 });
 
-test ("manager's officeNumber username", () => {
+test ("manager's officeNumber email", () => {
     const manager = new Manager ('tom ', '2222', 'cpu@cpu.com', '2356')
 
-    expect(manager.getGithub()).toEqual(expect.stringContaining('cpu@cpu.com'));
+    expect(manager.getEmail()).toEqual(expect.stringContaining('cpu@cpu.com'));
 });
 
 test("manager's role", () => {
